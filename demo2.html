@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<script>
+function rotar_imagen(){
+  var tiempo = 15000;//tiempo en milisegundos
+  var arrImagenes = ['images/d.png','images/b.png', 'images/c.png', 'images/a.png'];
+  
+  _img = document.getElementById('rotativo');
+  
+  //cargar la 1er imagen
+  _img.src = arrImagenes[0];
+  var i=1;
+  setInterval(function(){
+    _img.src = arrImagenes[i];
+    i = (i == arrImagenes.length-1)? 0 : (i+1);
+  }, tiempo);
+}
+</script>
+</head>
+<body onload="rotar_imagen();">
+  <img id="rotativo"  />
+</body>
+</html>
